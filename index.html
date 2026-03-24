@@ -205,54 +205,52 @@
       </div>
     </div>
   
-    <div class="project">
-      <h3>택배사 송장 자동발번·출력·이력관리 시스템</h3>
-      <div class="project-meta">택배 API 연동 / 비동기 처리 / 성능 개선 / 운영 안정화</div>
-  
-      <div class="block-title">프로젝트 개요</div>
-      <div>
-        여러 택배사 API와 연동하여 송장 자동발번, 출력, 전송 결과 이력관리까지 처리하는 시스템을 개발하고 유지보수했습니다.
-        단순한 API 호출 수준이 아니라 대량 주문 처리 상황에서도 안정적으로 동작하도록 구조를 개선했습니다.
-      </div>
-  
-      <div class="block-title">문제 상황</div>
-      <ul class="detail-list">
-        <li>명절 시즌 대량 주문 처리 시 순차 처리 구조로 인해 무한 로딩 및 타임아웃 발생</li>
-        <li>택배사 API 호출 제한(Rate Limit)과 서버 리소스 병목이 동시에 발생</li>
-        <li>실패 건의 확인 및 재전송이 어려워 운영팀과 고객사 대응 부담이 큼</li>
-      </ul>
-  
-      <div class="block-title">해결 방식</div>
-      <ul class="detail-list">
-        <li>쉘 스크립트 기반 비동기 처리 구조 적용</li>
-        <li>Retry Logic과 실패 건 재처리 배치 도입</li>
-        <li>송장 결과 출력 및 이력관리 로그 저장 기능 개발</li>
-        <li>사용자가 실패 사유를 확인하고 재전송할 수 있는 운영 기능 추가</li>
-      </ul>
-  
-      <div class="block-title">성과</div>
-      <ul class="detail-list">
-        <li>1000건 이상 동시 처리 상황에서 처리시간 30분 → 3분 수준으로 단축</li>
-        <li>발번 성공률 70% → 95% 이상 개선</li>
-        <li>고객사 클레임 감소 및 시스템 신뢰도 회복에 기여</li>
-      </ul>
-      <p style="margin-top:16px;">
-      <a href="shipping-detail.html">→ 상세 페이지 보기</a>
-    </p>
-      <div class="block-title">상세 자료</div>
-      <div>
-        PDF 자료와 코드/화면 캡처는 아래 링크와 상세 페이지 형태로 추가 확장 가능합니다.
-        현재 메인 포트폴리오에서는 핵심 요약 중심으로만 구성했습니다.
-      </div>
-  
-      <div class="tag-wrap">
-        <span class="tag">REST API</span>
-        <span class="tag">Async Processing</span>
-        <span class="tag">Retry Logic</span>
-        <span class="tag">Shell Script</span>
-        <span class="tag">Logging</span>
-      </div>
+<a class="project-link" href="shipping-detail.html">
+  <div class="project">
+    <h3>택배사 송장 자동발번·출력·이력관리 시스템</h3>
+    <div class="project-meta">택배 API 연동 / 비동기 처리 / 성능 개선 / 운영 안정화</div>
+
+    <div class="block-title">프로젝트 개요</div>
+    <div>
+      여러 택배사 API와 연동하여 송장 자동발번, 출력, 전송 결과 이력관리까지 처리하는 시스템을 개발하고 유지보수했습니다.
+      단순한 API 호출 수준이 아니라 대량 주문 처리 상황에서도 안정적으로 동작하도록 구조를 개선했습니다.
     </div>
+
+    <div class="block-title">문제 상황</div>
+    <ul class="detail-list">
+      <li>명절 시즌 대량 주문 처리 시 순차 처리 구조로 인해 무한 로딩 및 타임아웃 발생</li>
+      <li>택배사 API 호출 제한(Rate Limit)과 서버 리소스 병목이 동시에 발생</li>
+      <li>실패 건의 확인 및 재전송이 어려워 운영팀과 고객사 대응 부담이 큼</li>
+    </ul>
+
+    <div class="block-title">해결 방식</div>
+    <ul class="detail-list">
+      <li>쉘 스크립트 기반 비동기 처리 구조 적용</li>
+      <li>Retry Logic과 실패 건 재처리 배치 도입</li>
+      <li>송장 결과 출력 및 이력관리 로그 저장 기능 개발</li>
+      <li>사용자가 실패 사유를 확인하고 재전송할 수 있는 운영 기능 추가</li>
+    </ul>
+
+    <div class="block-title">성과</div>
+    <ul class="detail-list">
+      <li>1000건 이상 동시 처리 상황에서 처리시간 30분 → 3분 수준으로 단축</li>
+      <li>발번 성공률 70% → 95% 이상 개선</li>
+      <li>고객사 클레임 감소 및 시스템 신뢰도 회복에 기여</li>
+    </ul>
+
+    <div class="tag-wrap">
+      <span class="tag">REST API</span>
+      <span class="tag">Async Processing</span>
+      <span class="tag">Retry Logic</span>
+      <span class="tag">Shell Script</span>
+      <span class="tag">Logging</span>
+    </div>
+
+    <div class="project-cta">
+      상세 페이지 보기 →
+    </div>
+  </div>
+</a>
   </section>
     
 
