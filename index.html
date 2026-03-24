@@ -3,18 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Backend Developer Portfolio</title>
+  <title>오태훈 | Backend Developer Portfolio</title>
   <style>
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #0f172a;
+      background: #0b1220;
       color: #e5e7eb;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     a {
@@ -27,86 +31,158 @@
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 48px 20px 80px;
+      padding: 0 20px 80px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: rgba(11, 18, 32, 0.88);
+      border-bottom: 1px solid #233047;
+    }
+
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-title {
+      font-weight: bold;
+      color: #f8fafc;
+      font-size: 18px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 14px;
     }
 
     .hero {
-      padding: 24px 0 12px;
+      padding: 56px 0 28px;
     }
 
     .hero h1 {
-      margin: 0 0 12px;
-      font-size: 42px;
+      margin: 0 0 10px;
+      font-size: 46px;
       color: #f8fafc;
+      line-height: 1.2;
     }
 
-    .hero .subtitle {
+    .hero .sub {
       display: inline-block;
-      margin-bottom: 18px;
       color: #38bdf8;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: bold;
+      margin-bottom: 18px;
     }
 
     .hero .summary {
-      max-width: 760px;
+      max-width: 840px;
       color: #cbd5e1;
-      font-size: 17px;
+      font-size: 18px;
+    }
+
+    .hero .meta {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #111c32;
+      border: 1px solid #2b3b58;
+      color: #dbeafe;
+      font-size: 13px;
     }
 
     .section {
-      margin-top: 52px;
+      margin-top: 56px;
     }
 
     .section h2 {
       margin: 0 0 18px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #334155;
+      font-size: 28px;
       color: #f8fafc;
-      font-size: 26px;
+      border-bottom: 1px solid #233047;
+      padding-bottom: 12px;
     }
 
-    .card {
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 14px;
-      padding: 22px;
-      margin-top: 18px;
+    .section-intro {
+      color: #cbd5e1;
+      max-width: 840px;
+      margin-bottom: 20px;
     }
 
-    .grid {
+    .grid-3 {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .skill-list,
-    .highlight-list,
-    .detail-list {
-      margin: 10px 0 0;
-      padding-left: 18px;
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
     }
 
-    .project-card {
-      background: #172554;
-      border: 1px solid #334155;
-      border-radius: 14px;
-      padding: 24px;
+    .card {
+      background: #132138;
+      border: 1px solid #263752;
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      color: #f8fafc;
+      font-size: 20px;
+    }
+
+    .card p {
+      margin: 0;
+      color: #cbd5e1;
+    }
+
+    .metric {
+      font-size: 30px;
+      font-weight: bold;
+      color: #7dd3fc;
+      margin-bottom: 8px;
+    }
+
+    .project {
+      background: #101a2f;
+      border: 1px solid #263752;
+      border-radius: 18px;
+      padding: 26px;
       margin-top: 22px;
     }
 
-    .project-card h3 {
-      margin: 0 0 8px;
+    .project h3 {
+      margin: 0 0 10px;
+      font-size: 24px;
       color: #f8fafc;
-      font-size: 22px;
     }
 
-    .meta {
+    .project-meta {
       color: #93c5fd;
       font-size: 14px;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .block-title {
@@ -117,8 +193,14 @@
       font-size: 15px;
     }
 
+    .detail-list {
+      margin: 8px 0 0;
+      padding-left: 18px;
+      color: #dbe4f0;
+    }
+
     .tag-wrap {
-      margin-top: 12px;
+      margin-top: 14px;
     }
 
     .tag {
@@ -126,243 +208,342 @@
       margin: 6px 8px 0 0;
       padding: 6px 10px;
       border-radius: 999px;
-      background: #0f172a;
-      border: 1px solid #334155;
-      color: #cbd5e1;
+      background: #0b1220;
+      border: 1px solid #2b3b58;
+      color: #d5e4ff;
       font-size: 13px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .shot {
+      background: #0d172a;
+      border: 1px solid #263752;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .shot img {
+      width: 100%;
+      display: block;
+      background: #0b1220;
+    }
+
+    .shot .caption {
+      padding: 12px 14px;
+      font-size: 14px;
+      color: #cbd5e1;
+      border-top: 1px solid #263752;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 12px;
+    }
+
+    .timeline-item {
+      padding: 16px 18px;
+      background: #132138;
+      border: 1px solid #263752;
+      border-radius: 14px;
+    }
+
+    .timeline-item strong {
+      color: #f8fafc;
     }
 
     .contact p {
       margin: 8px 0;
+      color: #dbe4f0;
     }
 
     .footer {
-      margin-top: 50px;
-      padding-top: 18px;
-      border-top: 1px solid #334155;
-      color: #94a3b8;
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #233047;
+      color: #8fa5c2;
       font-size: 14px;
     }
 
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 32px;
-      }
-
-      .grid {
+    @media (max-width: 980px) {
+      .grid-3,
+      .grid-2,
+      .gallery {
         grid-template-columns: 1fr;
       }
 
-      .container {
-        padding: 32px 16px 60px;
+      .hero h1 {
+        font-size: 36px;
       }
     }
   </style>
 </head>
 <body>
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="nav-title">OH TAE HOON</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#strengths">Strengths</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+
   <div class="container">
     <section class="hero">
       <h1>오태훈 | Backend Developer</h1>
-      <p class="subtitle">경력 4년 | 이커머스 주문/연동 시스템</p>
-      <div class="subtitle">문제 해결 중심의 백엔드 개발자</div>
+      <div class="sub">경력 4년 | 이커머스 주문·상품·물류 연동 시스템 개발</div>
       <p class="summary">
-        이커머스 주문/연동 시스템을 개발하며 데이터 정합성, 외부 API 안정성,
-        운영 이슈 분석 및 개선 업무를 수행해온 백엔드 개발자입니다.
-        단순 기능 개발보다 실제 운영 환경에서 발생하는 문제를 로그와 데이터 흐름 기반으로 추적하고,
-        재발 방지 가능한 방향으로 개선하는 데 강점이 있습니다.
+        PHP 기반 백엔드 개발자로서 쇼핑몰 통합관리 시스템에서 주문, 상품, 클레임, 배송, 통계, 내부 운영 기능을 개발·유지보수해왔습니다.
+        외부 API 연동과 내부 관리자 시스템 개발을 함께 수행했고, 실제 운영 환경에서 발생하는 장애와 데이터 정합성 이슈를
+        로그와 데이터 흐름을 기반으로 분석하고 재발 방지 구조로 개선하는 데 강점이 있습니다.
       </p>
+      <div class="meta">
+        <span class="pill">PHP</span>
+        <span class="pill">CodeIgniter</span>
+        <span class="pill">MySQL</span>
+        <span class="pill">REST API</span>
+        <span class="pill">JavaScript / jQuery</span>
+        <span class="pill">Batch / Shell Script</span>
+      </div>
     </section>
 
-    <section class="section">
+    <section id="about" class="section">
       <h2>About Me</h2>
       <div class="card">
-        주문, 상품, 연동 배치 등 서비스 운영에 직접 영향을 주는 영역을 주로 다뤘습니다.
-        외부 시스템 연동 과정에서 발생하는 장애, 중복 처리 이슈, 데이터 누락 및 정합성 문제를
-        확인하고 원인을 좁혀가는 업무를 지속적으로 수행했습니다.
-        실제 서비스 운영 환경에서 발생하는 문제를 로그와 데이터 흐름 기반으로 분석하고, 재발 방지 중심으로 개선하는 데 강점이 있습니다.
+        <p>
+          약 175개 쇼핑몰 API 연동 로직 개발 및 유지보수를 수행했고, 누적 작업 경험은 1800건 이상입니다.
+          주문·상품·클레임 연동뿐 아니라 택배사 송장 발번/출력 시스템, 고객사 운영 관리, 통계 대시보드,
+          내부 API 및 배치 프로그램까지 폭넓게 담당했습니다.
+          특히 대형 고객사 커스터마이징과 운영 이슈 대응 경험이 많아, 단순 기능 구현보다 실제 서비스 안정성과 운영 효율을
+          함께 고려하는 개발 방식을 지향합니다.
+        </p>
       </div>
     </section>
 
-    <section class="section">
+    <section id="strengths" class="section">
       <h2>Core Strengths</h2>
-      <p>
-      대용량 주문 데이터 처리와 외부 API 연동 과정에서 발생하는 장애 및 데이터 정합성 문제를 해결해온 경험이 있습니다.
+      <div class="grid-3">
+        <div class="card">
+          <div class="metric">175+</div>
+          <h3>쇼핑몰 연동 경험</h3>
+          <p>다양한 플랫폼의 인증 방식, 데이터 포맷, 주문/클레임 구조 차이를 고려한 API 연동 및 유지보수 경험</p>
+        </div>
+        <div class="card">
+          <div class="metric">1800+</div>
+          <h3>누적 작업 이력</h3>
+          <p>신규 개발, 기능 개선, 운영 이슈 대응, 고객사 커스터마이징, 배치 및 내부 운영 기능까지 폭넓게 수행</p>
+        </div>
+        <div class="card">
+          <div class="metric">95%+</div>
+          <h3>안정성 개선 경험</h3>
+          <p>대량 발번 지연 이슈 대응 과정에서 비동기 처리와 재시도 로직을 적용해 성공률과 처리 속도를 개선</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Representative Projects</h2>
+      <p class="section-intro">
+        아래 프로젝트는 실제 업무 경험 중 포트폴리오로 보여주기 적합한 대표 사례만 추려 정리한 것입니다.
+        신규 기능 개발뿐 아니라 운영 툴, 통계 페이지, 장애 대응 및 성능 개선 경험까지 포함했습니다.
       </p>
-      <div class="grid">
-        <div class="card">
-          <strong>운영 이슈 분석</strong>
-          <ul class="highlight-list">
-            <li>로그와 DB 데이터를 기반으로 원인 추적</li>
-            <li>외부 연동 장애 상황 정리 및 커뮤니케이션</li>
-            <li>재현이 어려운 이슈를 구조적으로 분석</li>
-          </ul>
-        </div>
-        <div class="card">
-          <strong>서비스 안정성 개선</strong>
-          <ul class="highlight-list">
-            <li>중복 처리 및 데이터 정합성 이슈 점검</li>
-            <li>운영성 배치 스크립트 유지보수</li>
-            <li>문제 발생 시 추적 가능한 구조 선호</li>
-          </ul>
-        </div>
-      </div>
-    </section>
 
-    <section class="section">
-      <h2>Skills</h2>
-      <div class="grid">
-        <div class="card">
-          <strong>Backend</strong>
-          <ul class="skill-list">
-            <li>PHP</li>
-            <li>JavaScript / jQuery</li>
-            <li>REST API 연동</li>
-            <li>Batch Processing</li>
-          </ul>
-        </div>
-        <div class="card">
-          <strong>Database / Infra</strong>
-          <ul class="skill-list">
-            <li>MySQL</li>
-            <li>Linux</li>
-            <li>AWS 환경 운영 경험</li>
-            <li>로그 기반 운영 이슈 분석</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+      <div class="project">
+        <h3>쇼핑몰 통합 운영·분석 시스템</h3>
+        <div class="project-meta">내부 관리자 페이지 / 통계 대시보드 / 고객사 운영 관리</div>
 
-    <section class="section">
-      <h2>Projects</h2>
-
-      <div class="project-card">
-        <h3>외부 API 중복 호출 이슈 분석 및 추적 구조 개선</h3>
-        <div class="meta">주문 연동 / 외부 API / 로그 분석</div>
-
-        <div class="block-title">문제 상황</div>
+        <div class="block-title">프로젝트 개요</div>
         <div>
-          외부 연동사 측에서 특정 주문 준비 처리 API가 중복 호출되었다는 이슈를 전달했지만,
-          내부 연동 로그상 동일 요청은 1회만 확인되는 상황이 발생했습니다.
+          고객사 운영 현황을 한눈에 파악할 수 있도록 고객사 현황, 계약 만료 예정 업체, 테스트 만료 예정 업체,
+          상품·주문 연동 현황, 시간/요일별 가입 HeatMap 등 내부 관리용 페이지를 개발했습니다.
         </div>
 
-        <div class="block-title">분석 과정</div>
+        <div class="block-title">내가 맡은 역할</div>
         <ul class="detail-list">
-          <li>내부 로그와 외부 제공 로그의 시각, 주문 식별값, 처리 흐름 비교</li>
-          <li>밀리초 단위 시간까지 대조하여 실제 중복 호출 가능성 검토</li>
-          <li>배치, 재시도, 수동 처리 등 중복 가능 경로 분리 점검</li>
+          <li>내부 운영 화면 기획 반영 및 검색/정렬/필터 UI 개발</li>
+          <li>고객사별 상태를 조회하는 백엔드 로직 및 집계 쿼리 작성</li>
+          <li>차트/표/HeatMap 형태로 데이터를 시각화하는 관리자 페이지 구현</li>
+          <li>운영팀이 계약 종료 예정, 연동 저하, 가입 추이 등을 빠르게 파악할 수 있는 화면 구성</li>
         </ul>
 
-        <div class="block-title">개선 내용</div>
+        <div class="block-title">기술 포인트</div>
         <ul class="detail-list">
-          <li>요청 단위 추적이 가능하도록 로그 포맷 보강</li>
-          <li>호출 시점과 응답 결과를 더 명확히 기록하도록 개선</li>
-          <li>유사 이슈 발생 시 원인 범위를 빠르게 좁힐 수 있는 구조 정리</li>
-        </ul>
-
-        <div class="tag-wrap">
-          <span class="tag">PHP</span>
-          <span class="tag">API Integration</span>
-          <span class="tag">Troubleshooting</span>
-          <span class="tag">Logging</span>
-        </div>
-      </div>
-      
-      <div class="block-title">결과</div>
-      <ul>
-        <li>중복 호출 이슈 재발 방지</li>
-        <li>장애 원인 분석 시간 단축</li>
-      </ul>
-      
-      <div class="project-card">
-        <h3>주문 데이터 중복 여부 점검용 SQL 정리 및 운영 대응</h3>
-        <div class="meta">MySQL / 데이터 정합성 / 운영 지원</div>
-
-        <div class="block-title">문제 상황</div>
-        <div>
-          특정 쇼핑몰 주문 데이터에서 동일 주문번호가 중복 적재되었는지
-          반복적으로 확인해야 하는 운영 이슈가 발생했습니다.
-        </div>
-
-        <div class="block-title">수행 내용</div>
-        <ul class="detail-list">
-          <li>mall_id, register_date, order_id 기준으로 중복 건을 식별하는 쿼리 작성</li>
-          <li>단건 조회가 아니라 중복 리스트를 빠르게 추출할 수 있도록 group by / having 조건 구성</li>
-          <li>운영에서 자주 사용하는 조건을 기준으로 재사용 가능한 형태로 정리</li>
-        </ul>
-
-        <div class="block-title">기여 포인트</div>
-        <ul class="detail-list">
-          <li>운영 이슈 발생 시 수작업 확인 시간을 줄이는 기준 마련</li>
-          <li>데이터 정합성 문제를 감이 아니라 SQL 기준으로 확인 가능하게 정리</li>
-        </ul>
-
-        <div class="tag-wrap">
-          <span class="tag">MySQL</span>
-          <span class="tag">SQL</span>
-          <span class="tag">Data Integrity</span>
-          <span class="tag">Operations</span>
-        </div>
-      </div>
-      
-      <div class="block-title">결과</div>
-      <ul>
-        <li>중복 호출 이슈 재발 방지</li>
-        <li>장애 원인 분석 시간 단축</li>
-      </ul>
-
-      
-      <div class="project-card">
-        <h3>운영 배치 스크립트 유지보수 및 안정성 개선</h3>
-        <div class="meta">배치 처리 / 운영 자동화 / 유지보수</div>
-
-        <div class="block-title">문제 상황</div>
-        <div>
-          오래된 운영 배치 스크립트는 처리 흐름이 불명확하고 예외 상황 기록이 부족해
-          장애 발생 시 원인 파악이 어려운 경우가 있었습니다.
-        </div>
-
-        <div class="block-title">수행 내용</div>
-        <ul class="detail-list">
-          <li>기존 스크립트의 처리 흐름과 예외 가능 지점 점검</li>
-          <li>실패 상황을 추적할 수 있도록 로그 보강</li>
-          <li>데이터 매핑 및 조건 분기 구조를 더 명확하게 정리</li>
-          <li>운영 중 실수 가능성이 있는 부분을 점검하고 보완</li>
+          <li>고객사 현황, 신규 고객사 수, 전체 고객사 수 등을 기간 조건 기반으로 집계</li>
+          <li>요일/시간별 가입 데이터를 HeatMap 형태로 시각화</li>
+          <li>계약 만료 예정 업체 및 테스트 만료 예정 업체를 남은 일수 기준으로 정렬/관리</li>
+          <li>상품 연동률/주문 수집량 비교 화면으로 운영 이상 징후를 확인할 수 있게 구성</li>
         </ul>
 
         <div class="block-title">기대 효과</div>
         <ul class="detail-list">
-          <li>배치 실패 원인 파악 시간 단축</li>
-          <li>운영성 코드 유지보수 부담 완화</li>
-          <li>문제 발생 시 추적 가능한 구조 확보</li>
+          <li>운영팀이 고객사 상태를 엑셀이나 수작업 없이 화면에서 바로 확인 가능</li>
+          <li>증감 추이와 계약/연동 현황을 빠르게 점검해 대응 속도 향상</li>
+          <li>데이터 기반 의사결정에 필요한 기초 관리 도구 역할 수행</li>
         </ul>
-        
-        <div class="block-title">결과</div>
-        <ul>
-          <li>중복 호출 이슈 재발 방지</li>
-          <li>장애 원인 분석 시간 단축</li>
-        </ul>
+
+        <div class="gallery">
+          <div class="shot">
+            <img src="images/dashboard-client-status.png" alt="고객사 현황 통계 화면">
+            <div class="caption">고객사 현황 통계 화면: 기간별 신규 회원 수, 신규 고객사 수, 전체 고객사 수를 시각화</div>
+          </div>
+          <div class="shot">
+            <img src="images/dashboard-heatmap.png" alt="시간 요일별 가입 HeatMap">
+            <div class="caption">시간/요일별 가입 HeatMap: 가입 패턴을 시간대·요일 기준으로 분석할 수 있도록 구성</div>
+          </div>
+          <div class="shot">
+            <img src="images/dashboard-contract-expiry.png" alt="계약만료 예정 업체 화면">
+            <div class="caption">계약만료 예정 업체 화면: 남은일수, 상품등록, 주문수집 현황까지 함께 확인 가능</div>
+          </div>
+          <div class="shot">
+            <img src="images/dashboard-sync-check.png" alt="연동현황 체크 화면">
+            <div class="caption">연동현황 체크 화면: 상품연동·주문건수의 전월/2달전/3달전 대비 증감률 모니터링</div>
+          </div>
+        </div>
+
         <div class="tag-wrap">
           <span class="tag">PHP</span>
-          <span class="tag">Batch</span>
-          <span class="tag">Maintenance</span>
-          <span class="tag">Linux</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Admin Dashboard</span>
+          <span class="tag">Data Visualization</span>
+          <span class="tag">Operations</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <h3>고객사별 분리 DB 기반 통계 집계 로직 개발</h3>
+        <div class="project-meta">MySQL / 동적 UNION ALL / 클레임 통계 집계</div>
+
+        <div class="block-title">문제 상황</div>
+        <div>
+          고객사별로 분리된 DB 구조에서 연도별 클레임 건수와 사유를 통합 조회해야 했습니다.
+          단일 테이블 조회가 아니라, 다수의 고객사 DB에서 조건에 맞는 데이터를 모아 한 번에 집계해야 하는 구조였습니다.
+        </div>
+
+        <div class="block-title">내가 구현한 방식</div>
+        <ul class="detail-list">
+          <li>대상 고객사 목록을 먼저 조회한 뒤 고객사별 DB명을 동적으로 구성</li>
+          <li>고객사별 `clame_info` 조회 쿼리를 생성하고 `UNION ALL`로 결합</li>
+          <li>연도별·클레임 사유별로 그룹핑해 전체 합계를 계산</li>
+          <li>PHP에서 연도별 총계 배열을 별도로 계산해 화면 테이블에 함께 노출</li>
+        </ul>
+
+        <div class="block-title">핵심 포인트</div>
+        <ul class="detail-list">
+          <li>멀티 테넌트에 가까운 구조에서 통합 통계를 제공하는 집계 로직 구현</li>
+          <li>클레임 사유가 없는 값까지 예외 처리해 화면 품질을 높임</li>
+          <li>단순 조회가 아니라 연도별 총계까지 함께 계산하는 형태로 운영 활용도 강화</li>
+        </ul>
+
+        <div class="block-title">결과</div>
+        <ul class="detail-list">
+          <li>분산된 DB 구조에서도 운영/분석에 필요한 통합 통계 제공 가능</li>
+          <li>클레임 이슈를 연도·사유 단위로 빠르게 확인 가능</li>
+          <li>고객사 상태 분석과 운영 대응에 필요한 근거 데이터 확보</li>
+        </ul>
+
+        <div class="gallery">
+          <div class="shot">
+            <img src="images/dashboard-test-expiry.png" alt="테스트 만료 예정 업체 화면">
+            <div class="caption">통계/운영 화면과 함께 활용되는 내부 모니터링 페이지 예시</div>
+          </div>
+          <div class="shot">
+            <img src="images/dashboard-client-management.png" alt="클라이언트 관리 화면">
+            <div class="caption">고객사 정보 검색 및 관리 화면: 운영 담당자가 고객 정보를 빠르게 조회·관리할 수 있도록 구성</div>
+          </div>
+        </div>
+
+        <div class="tag-wrap">
+          <span class="tag">MySQL</span>
+          <span class="tag">UNION ALL</span>
+          <span class="tag">Query Design</span>
+          <span class="tag">Data Aggregation</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <h3>택배사 송장 자동발번·전송 시스템 및 장애 대응</h3>
+        <div class="project-meta">택배 API 연동 / 비동기 처리 / 이력 관리 / 성능 개선</div>
+
+        <div class="block-title">배경</div>
+        <div>
+          택배사 API를 활용한 자동 발번 시스템을 개발하고 유지보수했습니다.
+          CJ대한통운, 우체국, 한진, 로젠, 롯데, BGF 편의점택배, 카카오T 당일배송 등 여러 배송 수단과 연동했고,
+          발번/출력/이력관리 기능까지 함께 구축했습니다.
+        </div>
+
+        <div class="block-title">어려웠던 문제</div>
+        <ul class="detail-list">
+          <li>명절 시즌 대량 주문 처리 시 단일 스레드 순차 처리로 인해 무한 로딩 및 타임아웃 발생</li>
+          <li>택배사 API Rate Limit 초과와 서버 리소스 병목이 동시에 발생</li>
+          <li>실패 건을 사용자가 직접 확인하고 재전송하기 어려운 구조</li>
+        </ul>
+
+        <div class="block-title">해결 방식</div>
+        <ul class="detail-list">
+          <li>쉘 스크립트 기반 비동기 처리 구조 적용</li>
+          <li>Rate Limiting 및 Retry Logic 구현</li>
+          <li>서버 분산 처리 및 실패 건 재처리 배치 구성</li>
+          <li>결과 출력 및 이력관리 로그 저장 기능 개발</li>
+        </ul>
+
+        <div class="block-title">성과</div>
+        <ul class="detail-list">
+          <li>1000건 이상 동시 처리 상황에서 처리시간을 30분에서 3분 수준으로 단축</li>
+          <li>발번 성공률을 70% 수준에서 95% 이상으로 개선</li>
+          <li>고객사 클레임 해소와 시스템 신뢰도 회복에 기여</li>
+        </ul>
+
+        <div class="tag-wrap">
+          <span class="tag">REST API</span>
+          <span class="tag">Async Processing</span>
+          <span class="tag">Retry Logic</span>
+          <span class="tag">Shell Script</span>
+          <span class="tag">Logging</span>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section id="experience" class="section">
+      <h2>Career Highlights</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <strong>2022 ~ 현재</strong><br />
+          쇼핑몰 통합관리 시스템에서 주문/상품/클레임/배송 연동 및 내부 운영 기능 개발 수행
+        </div>
+        <div class="timeline-item">
+          <strong>주요 경험</strong><br />
+          티몬, 홈앤쇼핑, 지그재그, 더현대몰, SSG.COM, 카카오톡선물하기/스토어, 카페24 유튜브 쇼핑, 일반업체 재고연동 등 다양한 연동 개발 수행
+        </div>
+        <div class="timeline-item">
+          <strong>대형 고객사 대응</strong><br />
+          미샤, 랄프로렌, CJ제일제당, 어바웃펫, 에프앤코, LVMH, 아디다스 등 대형 고객사 커스터마이징 및 운영 이슈 대응
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
       <h2>Contact</h2>
       <div class="card contact">
-        <p><strong>Email</strong>: terryoh123@gmail.com</p>
-        <p><strong>GitHub</strong>: https://github.com/terryoh123</p>
+        <p><strong>Name</strong>: 오태훈</p>
         <p><strong>Position</strong>: Backend Developer</p>
-        <p><strong>Experience</strong>: 4 years</p>
+        <p><strong>Experience</strong>: 4년 (2022.03 ~ 현재)</p>
+        <p><strong>Email</strong>: thoh1993@naver.com</p>
+        <p><strong>GitHub</strong>: <a href="https://github.com/terryoh123" target="_blank">https://github.com/terryoh123</a></p>
         <p><strong>Portfolio</strong>: <a href="https://backend-portfolio-six-dusky.vercel.app/" target="_blank">https://backend-portfolio-six-dusky.vercel.app/</a></p>
       </div>
     </section>
 
     <div class="footer">
-      © 2026 Backend Developer Portfolio
+      © 2026 OH TAE HOON Portfolio
     </div>
   </div>
 </body>
