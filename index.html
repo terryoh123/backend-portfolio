@@ -320,6 +320,7 @@
 <div id="imageModal" class="image-modal">
   <img id="modalImg" src="" alt="확대 이미지" />
 </div>
+<script src="/js/common.js"></script>  
 <body>
   <div class="nav">
     <div class="nav-inner">
@@ -601,19 +602,4 @@
     </div>
   </div>
 </body>
-  <script>
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("modalImg");
-
-  document.querySelectorAll(".shot img").forEach(img => {
-    img.addEventListener("click", () => {
-      modal.classList.add("active");
-      modalImg.src = img.src;
-    });
-  });
-
-  modal.addEventListener("click", () => {
-    modal.classList.remove("active");
-  });
-</script>
 </html>
