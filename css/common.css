@@ -189,3 +189,26 @@ a:hover {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ===== 태그 영역 ===== */
+.tag-wrap {
+  margin-top: 16px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 6px 6px 0 0;
+  font-size: 12px;
+  border-radius: 999px;
+  background: #1e293b;
+  color: #cbd5e1;
+  border: 1px solid #334155;
+  transition: 0.2s;
+}
+
+.tag:hover {
+  background: #334155;
+  color: #e2e8f0;
+}
