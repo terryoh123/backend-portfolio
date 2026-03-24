@@ -1,68 +1,343 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Backend Developer Portfolio</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
+      font-family: Arial, sans-serif;
       background: #0f172a;
-      color: #f1f5f9;
+      color: #e5e7eb;
+      line-height: 1.6;
     }
+
+    a {
+      color: #7dd3fc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
     .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
     }
-    h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
+
+    .hero {
+      padding: 24px 0 12px;
     }
-    h2 {
-      margin-top: 40px;
-      border-bottom: 1px solid #334155;
+
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: 42px;
+      color: #f8fafc;
+    }
+
+    .hero .subtitle {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: #38bdf8;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .hero .summary {
+      max-width: 760px;
+      color: #cbd5e1;
+      font-size: 17px;
+    }
+
+    .section {
+      margin-top: 52px;
+    }
+
+    .section h2 {
+      margin: 0 0 18px;
       padding-bottom: 10px;
+      border-bottom: 1px solid #334155;
+      color: #f8fafc;
+      font-size: 26px;
     }
+
     .card {
       background: #1e293b;
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 20px;
+      border: 1px solid #334155;
+      border-radius: 14px;
+      padding: 22px;
+      margin-top: 18px;
     }
-    .highlight {
-      color: #38bdf8;
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .skill-list,
+    .highlight-list,
+    .detail-list {
+      margin: 10px 0 0;
+      padding-left: 18px;
+    }
+
+    .project-card {
+      background: #172554;
+      border: 1px solid #334155;
+      border-radius: 14px;
+      padding: 24px;
+      margin-top: 22px;
+    }
+
+    .project-card h3 {
+      margin: 0 0 8px;
+      color: #f8fafc;
+      font-size: 22px;
+    }
+
+    .meta {
+      color: #93c5fd;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .block-title {
+      margin-top: 18px;
+      margin-bottom: 8px;
+      color: #7dd3fc;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .tag-wrap {
+      margin-top: 12px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 6px 8px 0 0;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #0f172a;
+      border: 1px solid #334155;
+      color: #cbd5e1;
+      font-size: 13px;
+    }
+
+    .contact p {
+      margin: 8px 0;
+    }
+
+    .footer {
+      margin-top: 50px;
+      padding-top: 18px;
+      border-top: 1px solid #334155;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        padding: 32px 16px 60px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Backend Developer</h1>
-    <p class="highlight">문제 해결 중심의 백엔드 개발자</p>
-
-    <h2>About Me</h2>
-    <div class="card">
-      <p>
-        이커머스 주문/연동 시스템을 개발하며 데이터 정합성과 API 안정성을 개선해온 백엔드 개발자입니다.
+    <section class="hero">
+      <h1>Backend Developer</h1>
+      <div class="subtitle">문제 해결 중심의 백엔드 개발자</div>
+      <p class="summary">
+        이커머스 주문/연동 시스템을 개발하며 데이터 정합성, 외부 API 안정성,
+        운영 이슈 분석 및 개선 업무를 수행해온 백엔드 개발자입니다.
+        단순 기능 개발보다 실제 운영 환경에서 발생하는 문제를 로그와 데이터 흐름 기반으로 추적하고,
+        재발 방지 가능한 방향으로 개선하는 데 강점이 있습니다.
       </p>
-    </div>
+    </section>
 
-    <h2>Skills</h2>
-    <div class="card">
-      <p>PHP / MySQL / AWS / REST API / Batch Processing</p>
-    </div>
+    <section class="section">
+      <h2>About Me</h2>
+      <div class="card">
+        주문, 상품, 연동 배치 등 서비스 운영에 직접 영향을 주는 영역을 주로 다뤘습니다.
+        외부 시스템 연동 과정에서 발생하는 장애, 중복 처리 이슈, 데이터 누락 및 정합성 문제를
+        확인하고 원인을 좁혀가는 업무를 지속적으로 수행했습니다.
+      </div>
+    </section>
 
-    <h2>Project</h2>
-    <div class="card">
-      <p><b>외부 API 중복 호출 이슈 분석</b></p>
-      <p>- 로그 분석 기반 원인 추적</p>
-      <p>- 중복 호출 방지 구조 개선</p>
-    </div>
+    <section class="section">
+      <h2>Core Strengths</h2>
+      <div class="grid">
+        <div class="card">
+          <strong>운영 이슈 분석</strong>
+          <ul class="highlight-list">
+            <li>로그와 DB 데이터를 기반으로 원인 추적</li>
+            <li>외부 연동 장애 상황 정리 및 커뮤니케이션</li>
+            <li>재현이 어려운 이슈를 구조적으로 분석</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>서비스 안정성 개선</strong>
+          <ul class="highlight-list">
+            <li>중복 처리 및 데이터 정합성 이슈 점검</li>
+            <li>운영성 배치 스크립트 유지보수</li>
+            <li>문제 발생 시 추적 가능한 구조 선호</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <h2>Contact</h2>
-    <div class="card">
-      <p>Email: your@email.com</p>
-      <p>GitHub: https://github.com/your-id</p>
+    <section class="section">
+      <h2>Skills</h2>
+      <div class="grid">
+        <div class="card">
+          <strong>Backend</strong>
+          <ul class="skill-list">
+            <li>PHP</li>
+            <li>JavaScript / jQuery</li>
+            <li>REST API 연동</li>
+            <li>Batch Processing</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>Database / Infra</strong>
+          <ul class="skill-list">
+            <li>MySQL</li>
+            <li>Linux</li>
+            <li>AWS 환경 운영 경험</li>
+            <li>로그 기반 운영 이슈 분석</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Projects</h2>
+
+      <div class="project-card">
+        <h3>외부 API 중복 호출 이슈 분석 및 추적 구조 개선</h3>
+        <div class="meta">주문 연동 / 외부 API / 로그 분석</div>
+
+        <div class="block-title">문제 상황</div>
+        <div>
+          외부 연동사 측에서 특정 주문 준비 처리 API가 중복 호출되었다는 이슈를 전달했지만,
+          내부 연동 로그상 동일 요청은 1회만 확인되는 상황이 발생했습니다.
+        </div>
+
+        <div class="block-title">분석 과정</div>
+        <ul class="detail-list">
+          <li>내부 로그와 외부 제공 로그의 시각, 주문 식별값, 처리 흐름 비교</li>
+          <li>밀리초 단위 시간까지 대조하여 실제 중복 호출 가능성 검토</li>
+          <li>배치, 재시도, 수동 처리 등 중복 가능 경로 분리 점검</li>
+        </ul>
+
+        <div class="block-title">개선 내용</div>
+        <ul class="detail-list">
+          <li>요청 단위 추적이 가능하도록 로그 포맷 보강</li>
+          <li>호출 시점과 응답 결과를 더 명확히 기록하도록 개선</li>
+          <li>유사 이슈 발생 시 원인 범위를 빠르게 좁힐 수 있는 구조 정리</li>
+        </ul>
+
+        <div class="tag-wrap">
+          <span class="tag">PHP</span>
+          <span class="tag">API Integration</span>
+          <span class="tag">Troubleshooting</span>
+          <span class="tag">Logging</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>주문 데이터 중복 여부 점검용 SQL 정리 및 운영 대응</h3>
+        <div class="meta">MySQL / 데이터 정합성 / 운영 지원</div>
+
+        <div class="block-title">문제 상황</div>
+        <div>
+          특정 쇼핑몰 주문 데이터에서 동일 주문번호가 중복 적재되었는지
+          반복적으로 확인해야 하는 운영 이슈가 발생했습니다.
+        </div>
+
+        <div class="block-title">수행 내용</div>
+        <ul class="detail-list">
+          <li>mall_id, register_date, order_id 기준으로 중복 건을 식별하는 쿼리 작성</li>
+          <li>단건 조회가 아니라 중복 리스트를 빠르게 추출할 수 있도록 group by / having 조건 구성</li>
+          <li>운영에서 자주 사용하는 조건을 기준으로 재사용 가능한 형태로 정리</li>
+        </ul>
+
+        <div class="block-title">기여 포인트</div>
+        <ul class="detail-list">
+          <li>운영 이슈 발생 시 수작업 확인 시간을 줄이는 기준 마련</li>
+          <li>데이터 정합성 문제를 감이 아니라 SQL 기준으로 확인 가능하게 정리</li>
+        </ul>
+
+        <div class="tag-wrap">
+          <span class="tag">MySQL</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Data Integrity</span>
+          <span class="tag">Operations</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>운영 배치 스크립트 유지보수 및 안정성 개선</h3>
+        <div class="meta">배치 처리 / 운영 자동화 / 유지보수</div>
+
+        <div class="block-title">문제 상황</div>
+        <div>
+          오래된 운영 배치 스크립트는 처리 흐름이 불명확하고 예외 상황 기록이 부족해
+          장애 발생 시 원인 파악이 어려운 경우가 있었습니다.
+        </div>
+
+        <div class="block-title">수행 내용</div>
+        <ul class="detail-list">
+          <li>기존 스크립트의 처리 흐름과 예외 가능 지점 점검</li>
+          <li>실패 상황을 추적할 수 있도록 로그 보강</li>
+          <li>데이터 매핑 및 조건 분기 구조를 더 명확하게 정리</li>
+          <li>운영 중 실수 가능성이 있는 부분을 점검하고 보완</li>
+        </ul>
+
+        <div class="block-title">기대 효과</div>
+        <ul class="detail-list">
+          <li>배치 실패 원인 파악 시간 단축</li>
+          <li>운영성 코드 유지보수 부담 완화</li>
+          <li>문제 발생 시 추적 가능한 구조 확보</li>
+        </ul>
+
+        <div class="tag-wrap">
+          <span class="tag">PHP</span>
+          <span class="tag">Batch</span>
+          <span class="tag">Maintenance</span>
+          <span class="tag">Linux</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Contact</h2>
+      <div class="card contact">
+        <p><strong>Email</strong>: your@email.com</p>
+        <p><strong>GitHub</strong>: <a href="https://github.com/your-id" target="_blank">https://github.com/your-id</a></p>
+        <p><strong>Portfolio</strong>: <a href="https://backend-portfolio-six-dusky.vercel.app/" target="_blank">https://backend-portfolio-six-dusky.vercel.app/</a></p>
+      </div>
+    </section>
+
+    <div class="footer">
+      © 2026 Backend Developer Portfolio
     </div>
   </div>
 </body>
