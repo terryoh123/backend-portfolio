@@ -349,168 +349,183 @@
         </div>
       </div>
     </section>
-
-    <section id="projects" class="section">
-      <h2>Representative Projects</h2>
-      <p class="section-intro">
-        아래 프로젝트는 실제 업무 경험 중 포트폴리오로 보여주기 적합한 대표 사례만 추려 정리한 것입니다.
-        신규 기능 개발뿐 아니라 운영 툴, 통계 페이지, 장애 대응 및 성능 개선 경험까지 포함했습니다.
-      </p>
-
-      <div class="project">
-        <h3>쇼핑몰 통합 운영·분석 시스템</h3>
-        <div class="project-meta">내부 관리자 페이지 / 통계 대시보드 / 고객사 운영 관리</div>
-
-        <div class="block-title">프로젝트 개요</div>
-        <div>
-          고객사 운영 현황을 한눈에 파악할 수 있도록 고객사 현황, 계약 만료 예정 업체, 테스트 만료 예정 업체,
-          상품·주문 연동 현황, 시간/요일별 가입 HeatMap 등 내부 관리용 페이지를 개발했습니다.
+  
+  <section id="projects" class="section">
+    <h2>Representative Projects</h2>
+    <p class="section-intro">
+      약 175개 쇼핑몰 API 연동 로직 개발 및 유지보수를 수행했고, 누적 작업 경험은 1800건 이상입니다.
+      주문·상품·클레임·배송 연동뿐 아니라 내부 운영 관리자 시스템과 데이터 분석 페이지까지 직접 구현했습니다.
+    </p>
+  
+    <div class="project">
+      <h3>쇼핑몰 통합 운영·분석 시스템</h3>
+      <div class="project-meta">내부 관리자 페이지 / 통계 대시보드 / 고객사 운영 관리</div>
+  
+      <div class="block-title">프로젝트 개요</div>
+      <div>
+        고객사 운영 상태를 빠르게 파악할 수 있도록 고객사 현황, 계약 만료 예정 업체,
+        테스트 만료 예정 업체, 연동 현황, 시간·요일별 가입 HeatMap 등을 한 화면에서 확인할 수 있는
+        내부 운영·분석 시스템을 개발했습니다.
+      </div>
+  
+      <div class="block-title">내가 맡은 역할</div>
+      <ul class="detail-list">
+        <li>기간별 / 조건별 검색, 정렬, 필터 기능이 포함된 관리자 화면 개발</li>
+        <li>신규 고객사 수, 전체 고객사 수, 전체 회원 수 등 운영 지표 조회 로직 구현</li>
+        <li>요일·시간대별 가입 패턴을 시각화하는 HeatMap 화면 개발</li>
+        <li>계약만료 예정 업체, 테스트 종료 예정 업체, 연동 저하 업체를 빠르게 식별할 수 있는 모니터링 페이지 구성</li>
+      </ul>
+  
+      <div class="block-title">기술 포인트</div>
+      <ul class="detail-list">
+        <li>운영팀이 수작업 없이 상태를 파악할 수 있도록 내부 관리 기능을 데이터 기반으로 시각화</li>
+        <li>표, 차트, HeatMap을 함께 사용해 운영 현황을 직관적으로 확인할 수 있게 구성</li>
+        <li>계약 상태, 상품 등록, 주문 수집 등의 지표를 결합해 이상 징후를 빠르게 찾을 수 있도록 설계</li>
+      </ul>
+  
+      <div class="block-title">성과</div>
+      <ul class="detail-list">
+        <li>엑셀이나 수기 확인 없이 고객사 운영 현황을 즉시 파악 가능한 내부 도구 구축</li>
+        <li>계약 종료 예정 / 연동 저하 업체를 빠르게 확인해 운영 대응 속도 향상</li>
+        <li>운영 데이터 기반 의사결정에 필요한 모니터링 체계 마련</li>
+      </ul>
+  
+      <div class="gallery">
+        <div class="shot">
+          <img src="images/dashboard-client-status.png" alt="고객사 현황 화면" />
+          <div class="caption">고객사 현황 화면: 신규 회원 수, 신규 고객사 수, 전체 고객사 수를 기간별로 시각화</div>
         </div>
-
-        <div class="block-title">내가 맡은 역할</div>
-        <ul class="detail-list">
-          <li>내부 운영 화면 기획 반영 및 검색/정렬/필터 UI 개발</li>
-          <li>고객사별 상태를 조회하는 백엔드 로직 및 집계 쿼리 작성</li>
-          <li>차트/표/HeatMap 형태로 데이터를 시각화하는 관리자 페이지 구현</li>
-          <li>운영팀이 계약 종료 예정, 연동 저하, 가입 추이 등을 빠르게 파악할 수 있는 화면 구성</li>
-        </ul>
-
-        <div class="block-title">기술 포인트</div>
-        <ul class="detail-list">
-          <li>고객사 현황, 신규 고객사 수, 전체 고객사 수 등을 기간 조건 기반으로 집계</li>
-          <li>요일/시간별 가입 데이터를 HeatMap 형태로 시각화</li>
-          <li>계약 만료 예정 업체 및 테스트 만료 예정 업체를 남은 일수 기준으로 정렬/관리</li>
-          <li>상품 연동률/주문 수집량 비교 화면으로 운영 이상 징후를 확인할 수 있게 구성</li>
-        </ul>
-
-        <div class="block-title">기대 효과</div>
-        <ul class="detail-list">
-          <li>운영팀이 고객사 상태를 엑셀이나 수작업 없이 화면에서 바로 확인 가능</li>
-          <li>증감 추이와 계약/연동 현황을 빠르게 점검해 대응 속도 향상</li>
-          <li>데이터 기반 의사결정에 필요한 기초 관리 도구 역할 수행</li>
-        </ul>
-
-        <div class="gallery">
-          <div class="shot">
-            <img src="images/dashboard-client-status.png" alt="고객사 현황 통계 화면">
-            <div class="caption">고객사 현황 통계 화면: 기간별 신규 회원 수, 신규 고객사 수, 전체 고객사 수를 시각화</div>
-          </div>
-          <div class="shot">
-            <img src="images/dashboard-heatmap.png" alt="시간 요일별 가입 HeatMap">
-            <div class="caption">시간/요일별 가입 HeatMap: 가입 패턴을 시간대·요일 기준으로 분석할 수 있도록 구성</div>
-          </div>
-          <div class="shot">
-            <img src="images/dashboard-contract-expiry.png" alt="계약만료 예정 업체 화면">
-            <div class="caption">계약만료 예정 업체 화면: 남은일수, 상품등록, 주문수집 현황까지 함께 확인 가능</div>
-          </div>
-          <div class="shot">
-            <img src="images/dashboard-sync-check.png" alt="연동현황 체크 화면">
-            <div class="caption">연동현황 체크 화면: 상품연동·주문건수의 전월/2달전/3달전 대비 증감률 모니터링</div>
-          </div>
+        <div class="shot">
+          <img src="images/dashboard-heatmap.png" alt="시간 요일별 가입 HeatMap" />
+          <div class="caption">시간/요일별 가입 HeatMap: 가입 패턴을 시간대와 요일 기준으로 분석할 수 있도록 구현</div>
         </div>
-
-        <div class="tag-wrap">
-          <span class="tag">PHP</span>
-          <span class="tag">MySQL</span>
-          <span class="tag">Admin Dashboard</span>
-          <span class="tag">Data Visualization</span>
-          <span class="tag">Operations</span>
+        <div class="shot">
+          <img src="images/dashboard-contract-expiry.png" alt="계약만료 예정 업체 화면" />
+          <div class="caption">계약만료 예정 업체 화면: 남은일수, 상품등록, 주문수집 현황을 함께 확인 가능</div>
+        </div>
+        <div class="shot">
+          <img src="images/dashboard-sync-check.png" alt="연동현황 체크 화면" />
+          <div class="caption">연동현황 체크 화면: 상품연동 및 주문건수의 전월·2달전·3달전 대비 증감률을 비교</div>
+        </div>
+        <div class="shot">
+          <img src="images/dashboard-test-expiry.png" alt="테스트 만료 예정 업체 화면" />
+          <div class="caption">테스트 만료 예정 업체 화면: 테스트 종료 예정 고객사를 남은일수 기준으로 관리</div>
+        </div>
+        <div class="shot">
+          <img src="images/dashboard-client-management.png" alt="클라이언트 관리 화면" />
+          <div class="caption">클라이언트 관리 화면: 고객사 정보 검색 및 관리 기능을 제공하는 내부 운영 페이지</div>
         </div>
       </div>
-
-      <div class="project">
-        <h3>고객사별 분리 DB 기반 통계 집계 로직 개발</h3>
-        <div class="project-meta">MySQL / 동적 UNION ALL / 클레임 통계 집계</div>
-
-        <div class="block-title">문제 상황</div>
-        <div>
-          고객사별로 분리된 DB 구조에서 연도별 클레임 건수와 사유를 통합 조회해야 했습니다.
-          단일 테이블 조회가 아니라, 다수의 고객사 DB에서 조건에 맞는 데이터를 모아 한 번에 집계해야 하는 구조였습니다.
+  
+      <div class="tag-wrap">
+        <span class="tag">PHP</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">Admin Dashboard</span>
+        <span class="tag">Operations</span>
+        <span class="tag">Data Visualization</span>
+      </div>
+    </div>
+  
+    <div class="project">
+      <h3>고객사별 분리 DB 기반 통계 집계 로직 개발</h3>
+      <div class="project-meta">MySQL / 동적 UNION ALL / 클레임 통계 집계</div>
+  
+      <div class="block-title">문제 상황</div>
+      <div>
+        고객사별로 DB가 분리된 구조에서 연도별 클레임 건수와 사유를 통합 조회해야 했습니다.
+        단일 테이블 조회가 아니라 다수의 고객사 DB를 묶어 운영에 활용 가능한 형태로 집계해야 하는 요구사항이 있었습니다.
+      </div>
+  
+      <div class="block-title">해결 방식</div>
+      <ul class="detail-list">
+        <li>대상 고객사 목록을 먼저 조회한 뒤 고객사별 DB명을 동적으로 생성</li>
+        <li>각 DB의 클레임 데이터를 조회하는 쿼리를 만들고 <code>UNION ALL</code>로 결합</li>
+        <li>연도별, 클레임 사유별 집계를 수행하고 PHP에서 총계 계산 로직 추가</li>
+        <li>사유 없음(NULL/빈값) 케이스까지 예외 처리해 운영 화면 품질 개선</li>
+      </ul>
+  
+      <div class="block-title">기술 포인트</div>
+      <ul class="detail-list">
+        <li>멀티 테넌트에 가까운 분리 DB 구조에서 통합 통계를 제공하는 집계 로직 구현</li>
+        <li>운영 화면에 바로 활용할 수 있도록 단순 조회가 아니라 요약·총계 형태로 후처리</li>
+        <li>PHP와 MySQL을 조합해 동적 쿼리 생성과 화면용 데이터 구조화를 동시에 처리</li>
+      </ul>
+  
+      <div class="block-title">성과</div>
+      <ul class="detail-list">
+        <li>분산된 DB 구조에서도 연도별 / 사유별 통합 통계를 제공 가능</li>
+        <li>고객사 이슈와 클레임 현황을 빠르게 파악할 수 있는 데이터 기반 확보</li>
+        <li>운영·분석용 내부 페이지의 활용도 향상</li>
+      </ul>
+  
+      <div class="gallery">
+        <div class="shot">
+          <img src="images/stats-sql-1.png" alt="통계 집계 SQL 코드 1" />
+          <div class="caption">고객사 목록 조회 후 대상 DB를 수집하고 통계 집계를 위한 UNION ALL 쿼리를 구성한 코드</div>
         </div>
-
-        <div class="block-title">내가 구현한 방식</div>
-        <ul class="detail-list">
-          <li>대상 고객사 목록을 먼저 조회한 뒤 고객사별 DB명을 동적으로 구성</li>
-          <li>고객사별 `clame_info` 조회 쿼리를 생성하고 `UNION ALL`로 결합</li>
-          <li>연도별·클레임 사유별로 그룹핑해 전체 합계를 계산</li>
-          <li>PHP에서 연도별 총계 배열을 별도로 계산해 화면 테이블에 함께 노출</li>
-        </ul>
-
-        <div class="block-title">핵심 포인트</div>
-        <ul class="detail-list">
-          <li>멀티 테넌트에 가까운 구조에서 통합 통계를 제공하는 집계 로직 구현</li>
-          <li>클레임 사유가 없는 값까지 예외 처리해 화면 품질을 높임</li>
-          <li>단순 조회가 아니라 연도별 총계까지 함께 계산하는 형태로 운영 활용도 강화</li>
-        </ul>
-
-        <div class="block-title">결과</div>
-        <ul class="detail-list">
-          <li>분산된 DB 구조에서도 운영/분석에 필요한 통합 통계 제공 가능</li>
-          <li>클레임 이슈를 연도·사유 단위로 빠르게 확인 가능</li>
-          <li>고객사 상태 분석과 운영 대응에 필요한 근거 데이터 확보</li>
-        </ul>
-
-        <div class="gallery">
-          <div class="shot">
-            <img src="images/dashboard-test-expiry.png" alt="테스트 만료 예정 업체 화면">
-            <div class="caption">통계/운영 화면과 함께 활용되는 내부 모니터링 페이지 예시</div>
-          </div>
-          <div class="shot">
-            <img src="images/dashboard-client-management.png" alt="클라이언트 관리 화면">
-            <div class="caption">고객사 정보 검색 및 관리 화면: 운영 담당자가 고객 정보를 빠르게 조회·관리할 수 있도록 구성</div>
-          </div>
-        </div>
-
-        <div class="tag-wrap">
-          <span class="tag">MySQL</span>
-          <span class="tag">UNION ALL</span>
-          <span class="tag">Query Design</span>
-          <span class="tag">Data Aggregation</span>
+        <div class="shot">
+          <img src="images/stats-sql-2.png" alt="통계 집계 SQL 코드 2" />
+          <div class="caption">연도별 총계 계산과 예외값 처리 로직을 포함한 PHP 후처리 코드</div>
         </div>
       </div>
-
-      <div class="project">
-        <h3>택배사 송장 자동발번·전송 시스템 및 장애 대응</h3>
-        <div class="project-meta">택배 API 연동 / 비동기 처리 / 이력 관리 / 성능 개선</div>
-
-        <div class="block-title">배경</div>
-        <div>
-          택배사 API를 활용한 자동 발번 시스템을 개발하고 유지보수했습니다.
-          CJ대한통운, 우체국, 한진, 로젠, 롯데, BGF 편의점택배, 카카오T 당일배송 등 여러 배송 수단과 연동했고,
-          발번/출력/이력관리 기능까지 함께 구축했습니다.
-        </div>
-
-        <div class="block-title">어려웠던 문제</div>
-        <ul class="detail-list">
-          <li>명절 시즌 대량 주문 처리 시 단일 스레드 순차 처리로 인해 무한 로딩 및 타임아웃 발생</li>
-          <li>택배사 API Rate Limit 초과와 서버 리소스 병목이 동시에 발생</li>
-          <li>실패 건을 사용자가 직접 확인하고 재전송하기 어려운 구조</li>
-        </ul>
-
-        <div class="block-title">해결 방식</div>
-        <ul class="detail-list">
-          <li>쉘 스크립트 기반 비동기 처리 구조 적용</li>
-          <li>Rate Limiting 및 Retry Logic 구현</li>
-          <li>서버 분산 처리 및 실패 건 재처리 배치 구성</li>
-          <li>결과 출력 및 이력관리 로그 저장 기능 개발</li>
-        </ul>
-
-        <div class="block-title">성과</div>
-        <ul class="detail-list">
-          <li>1000건 이상 동시 처리 상황에서 처리시간을 30분에서 3분 수준으로 단축</li>
-          <li>발번 성공률을 70% 수준에서 95% 이상으로 개선</li>
-          <li>고객사 클레임 해소와 시스템 신뢰도 회복에 기여</li>
-        </ul>
-
-        <div class="tag-wrap">
-          <span class="tag">REST API</span>
-          <span class="tag">Async Processing</span>
-          <span class="tag">Retry Logic</span>
-          <span class="tag">Shell Script</span>
-          <span class="tag">Logging</span>
-        </div>
+  
+      <div class="tag-wrap">
+        <span class="tag">MySQL</span>
+        <span class="tag">UNION ALL</span>
+        <span class="tag">Data Aggregation</span>
+        <span class="tag">PHP</span>
+        <span class="tag">Query Design</span>
       </div>
-    </section>
+    </div>
+  
+    <div class="project">
+      <h3>택배사 송장 자동발번·출력·이력관리 시스템</h3>
+      <div class="project-meta">택배 API 연동 / 비동기 처리 / 성능 개선 / 운영 안정화</div>
+  
+      <div class="block-title">프로젝트 개요</div>
+      <div>
+        여러 택배사 API와 연동하여 송장 자동발번, 출력, 전송 결과 이력관리까지 처리하는 시스템을 개발하고 유지보수했습니다.
+        단순한 API 호출 수준이 아니라 대량 주문 처리 상황에서도 안정적으로 동작하도록 구조를 개선했습니다.
+      </div>
+  
+      <div class="block-title">문제 상황</div>
+      <ul class="detail-list">
+        <li>명절 시즌 대량 주문 처리 시 순차 처리 구조로 인해 무한 로딩 및 타임아웃 발생</li>
+        <li>택배사 API 호출 제한(Rate Limit)과 서버 리소스 병목이 동시에 발생</li>
+        <li>실패 건의 확인 및 재전송이 어려워 운영팀과 고객사 대응 부담이 큼</li>
+      </ul>
+  
+      <div class="block-title">해결 방식</div>
+      <ul class="detail-list">
+        <li>쉘 스크립트 기반 비동기 처리 구조 적용</li>
+        <li>Retry Logic과 실패 건 재처리 배치 도입</li>
+        <li>송장 결과 출력 및 이력관리 로그 저장 기능 개발</li>
+        <li>사용자가 실패 사유를 확인하고 재전송할 수 있는 운영 기능 추가</li>
+      </ul>
+  
+      <div class="block-title">성과</div>
+      <ul class="detail-list">
+        <li>1000건 이상 동시 처리 상황에서 처리시간 30분 → 3분 수준으로 단축</li>
+        <li>발번 성공률 70% → 95% 이상 개선</li>
+        <li>고객사 클레임 감소 및 시스템 신뢰도 회복에 기여</li>
+      </ul>
+  
+      <div class="block-title">상세 자료</div>
+      <div>
+        PDF 자료와 코드/화면 캡처는 아래 링크와 상세 페이지 형태로 추가 확장 가능합니다.
+        현재 메인 포트폴리오에서는 핵심 요약 중심으로만 구성했습니다.
+      </div>
+  
+      <div class="tag-wrap">
+        <span class="tag">REST API</span>
+        <span class="tag">Async Processing</span>
+        <span class="tag">Retry Logic</span>
+        <span class="tag">Shell Script</span>
+        <span class="tag">Logging</span>
+      </div>
+    </div>
+  </section>
+    
 
     <section id="experience" class="section">
       <h2>Career Highlights</h2>
