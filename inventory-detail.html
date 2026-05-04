@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <link rel="stylesheet" href="/css/common.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>상품별 재고연동/관리 메뉴 개발 | 오태훈 포트폴리오</title>
+</head>
+
+<body>
+  <div id="imageModal" class="image-modal">
+    <img id="modalImg" src="" alt="확대 이미지" />
+  </div>
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="nav-title">OH TAE HOON</div>
+      <div class="nav-links">
+        <a href="index.html">← 메인으로</a>
+        <a href="#overview">Overview</a>
+        <a href="#problem">Problem</a>
+        <a href="#solution">Solution</a>
+        <a href="#points">Technical Points</a>
+        <a href="#code">Code</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <section id="overview" class="hero">
+      <h1>상품별 재고연동/관리 메뉴 개발</h1>
+      <div class="subtitle">운영 자동화 / 재고 관리 / 관리자 시스템 / API 제어 구조</div>
+      <p>
+        대형 고객사의 프로모션 및 운영 정책에 따라 특정 기간 동안 상품별·쇼핑몰별 재고 연동을 중지하거나
+        수동 재고 입력 요청이 반복적으로 발생했습니다.
+        기존에는 개발자가 직접 DB 수정 및 코드 예외처리를 통해 대응했으나,
+        이를 고객사와 운영팀이 직접 제어할 수 있도록 재고연동/관리 메뉴를 설계하고 개발했습니다.
+      </p>
+      <div class="meta">
+        <span class="pill">PHP</span>
+        <span class="pill">MySQL</span>
+        <span class="pill">Admin System</span>
+        <span class="pill">Inventory</span>
+        <span class="pill">Batch Control</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Project Highlights</h2>
+      <div class="grid-3">
+        <div class="metric-card">
+          <div class="metric">운영 자동화</div>
+          <h3>개발자 의존 제거</h3>
+          <p>수동 DB 수정 및 코드 변경 없이 운영팀/고객사가 직접 제어 가능</p>
+        </div>
+        <div class="metric-card">
+          <div class="metric">Self-Service</div>
+          <h3>관리 기능 제공</h3>
+          <p>재고 입력, 연동 ON/OFF, 이력 확인까지 하나의 화면에서 처리</p>
+        </div>
+        <div class="metric-card">
+          <div class="metric">가시성 개선</div>
+          <h3>이력 기반 관리</h3>
+          <p>변경 이력 저장 및 최근 변경사항을 시각적으로 표시</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="problem" class="section">
+      <h2>Problem</h2>
+      <div class="card">
+        <div class="block-title">문제 상황</div>
+        <ul class="detail-list">
+          <li>재고 연동 중지 및 수동 재고 입력 요청을 개발자가 직접 처리</li>
+          <li>DB 수정 + 소스 예외처리 방식으로 운영 리스크 존재</li>
+          <li>반복적인 요청 대응으로 불필요한 공수 및 리소스 낭비 발생</li>
+          <li>이력 관리 부재로 변경 추적이 어려움</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="solution" class="section">
+      <h2>Solution</h2>
+      <div class="card">
+        <div class="block-title">해결 방식</div>
+        <ul class="detail-list">
+          <li>상품별 재고, 재고관리 여부, 변경이력을 관리할 수 있는 관리자 메뉴 개발</li>
+          <li>수정 기능을 통해 재고 수동 입력 및 재고 연동 ON/OFF 제어 기능 구현</li>
+          <li>변경 이력을 별도 history DB에 저장하고 조회 가능하도록 구성</li>
+          <li>최근 24시간 이내 변경 건 존재 시 점멸 UI로 표시하여 인지성 강화</li>
+          <li>초기 진입 시 재고 연동 중단 상품을 우선 노출</li>
+          <li>상품코드 검색 시 전체 상품 조회 및 수정 가능</li>
+          <li>상품코드 / 고객사 코드 클릭 시 관련 상세 페이지로 이동 기능 제공</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="points" class="section">
+      <h2>Technical Points</h2>
+      <div class="card">
+        <ul class="detail-list">
+          <li>product DB의 Y/N 컬럼을 기준으로 API 배치 실행 여부를 제어하는 구조 설계</li>
+          <li>재고 변경 시 배치 반영 타이밍과 데이터 정합성을 고려한 상태 흐름 설계</li>
+          <li>운영자가 직접 제어 가능한 Self-Service 관리 시스템 구축</li>
+          <li>이력 데이터 저장을 통해 변경 추적 및 운영 안정성 확보</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="code" class="section">
+      <p class="section-intro">
+        재고 관리 여부에 따라 API 배치 실행을 제어하는 로직과 변경 이력 저장 구조의 핵심 구현 코드입니다.
+      </p>
+      <h2>Implementation Code</h2>
+      <div class="gallery">
+        <div class="shot">
+          <img src="images/inventory-code-1.png" alt="재고 관리 로직 코드" />
+          <div class="caption">재고관리 여부(Y/N)에 따라 API 배치 실행을 분기하는 처리 로직</div>
+        </div>
+        <div class="shot">
+          <img src="images/inventory-code-2.png" alt="이력 저장 코드" />
+          <div class="caption">재고 변경 시 history DB에 이력을 저장하는 로직</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <a href="index.html">← 메인 포트폴리오로 돌아가기</a>
+    </div>
+  </div>
+  <script src="/js/common.js"></script>
+</body>
+
+</html>

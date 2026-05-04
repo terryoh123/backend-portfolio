@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,9 +9,9 @@
 </head>
 
 <body>
-<div id="imageModal" class="image-modal">
-  <img id="modalImg" src="" alt="확대 이미지" />
-</div>
+  <div id="imageModal" class="image-modal">
+    <img id="modalImg" src="" alt="확대 이미지" />
+  </div>
   <div class="nav">
     <div class="nav-inner">
       <div class="nav-title">OH TAE HOON</div>
@@ -76,157 +77,171 @@
         </div>
       </div>
     </section>
-  
-  <section id="projects" class="section">
-    <h2>Representative Projects</h2>
-    <p class="section-intro">
-      약 175개 쇼핑몰 API 연동 로직 개발 및 유지보수를 수행했고, 누적 작업 경험은 2200건 이상입니다.
-      주문·상품·클레임·배송 연동뿐 아니라 내부 운영 관리자 시스템과 데이터 분석 페이지까지 직접 구현했습니다.
-    </p>
-  
-<a class="project-link" href="mall-detail.html">
-    <div class="project">
-      <h3>쇼핑몰 통합 운영·분석 시스템</h3>
-      <div class="project-meta">내부 관리자 페이지 / 통계 대시보드 / 고객사 운영 관리</div>
-  
-      <div class="block-title">프로젝트 개요</div>
-      <div>
-        고객사 운영 상태를 빠르게 파악할 수 있도록 고객사 현황, 계약 만료 예정 업체,
-        테스트 만료 예정 업체, 연동 현황, 시간·요일별 가입 HeatMap 등을 한 화면에서 확인할 수 있는
-        내부 운영·분석 시스템을 개발했습니다.
-      </div>
-  
-      <div class="block-title">내가 맡은 역할</div>
-      <ul class="detail-list">
-        <li>기간별 / 조건별 검색, 정렬, 필터 기능이 포함된 관리자 화면 개발</li>
-        <li>신규 고객사 수, 전체 고객사 수, 전체 회원 수 등 운영 지표 조회 로직 구현</li>
-        <li>요일·시간대별 가입 패턴을 시각화하는 HeatMap 화면 개발</li>
-        <li>계약만료 예정 업체, 테스트 종료 예정 업체, 연동 저하 업체를 빠르게 식별할 수 있는 모니터링 페이지 구성</li>
-      </ul>
-  
-      <div class="block-title">기술 포인트</div>
-      <ul class="detail-list">
-        <li>운영팀이 수작업 없이 상태를 파악할 수 있도록 내부 관리 기능을 데이터 기반으로 시각화</li>
-        <li>표, 차트, HeatMap을 함께 사용해 운영 현황을 직관적으로 확인할 수 있게 구성</li>
-        <li>계약 상태, 상품 등록, 주문 수집 등의 지표를 결합해 이상 징후를 빠르게 찾을 수 있도록 설계</li>
-      </ul>
-  
-      <div class="block-title">성과</div>
-      <ul class="detail-list">
-        <li>엑셀이나 수기 확인 없이 고객사 운영 현황을 즉시 파악 가능한 내부 도구 구축</li>
-        <li>계약 종료 예정 / 연동 저하 업체를 빠르게 확인해 운영 대응 속도 향상</li>
-        <li>운영 데이터 기반 의사결정에 필요한 모니터링 체계 마련</li>
-      </ul>
-  
-      <div class="tag-wrap">
-        <span class="tag">PHP</span>
-        <span class="tag">MySQL</span>
-        <span class="tag">Admin Dashboard</span>
-        <span class="tag">Operations</span>
-        <span class="tag">Data Visualization</span>
-      </div>
 
-      <div class="project-cta">
-        상세 페이지 보기 →
-      </div>
-    </div>
-</a>
-  
-<a class="project-link" href="stats-detail.html">
-    <div class="project">
-      <h3>고객사별 분리 DB 기반 통계 집계 로직 개발</h3>
-      <div class="project-meta">MySQL / 동적 UNION ALL / 클레임 통계 집계</div>
-  
-      <div class="block-title">문제 상황</div>
-      <div>
-        고객사별로 DB가 분리된 구조에서 연도별 클레임 건수와 사유를 통합 조회해야 했습니다.
-        단일 테이블 조회가 아니라 다수의 고객사 DB를 묶어 운영에 활용 가능한 형태로 집계해야 하는 요구사항이 있었습니다.
-      </div>
-  
-      <div class="block-title">해결 방식</div>
-      <ul class="detail-list">
-        <li>대상 고객사 목록을 먼저 조회한 뒤 고객사별 DB명을 동적으로 생성</li>
-        <li>각 DB의 클레임 데이터를 조회하는 쿼리를 만들고 <code>UNION ALL</code>로 결합</li>
-        <li>연도별, 클레임 사유별 집계를 수행하고 PHP에서 총계 계산 로직 추가</li>
-        <li>사유 없음(NULL/빈값) 케이스까지 예외 처리해 운영 화면 품질 개선</li>
-      </ul>
-  
-      <div class="block-title">기술 포인트</div>
-      <ul class="detail-list">
-        <li>멀티 테넌트에 가까운 분리 DB 구조에서 통합 통계를 제공하는 집계 로직 구현</li>
-        <li>운영 화면에 바로 활용할 수 있도록 단순 조회가 아니라 요약·총계 형태로 후처리</li>
-        <li>PHP와 MySQL을 조합해 동적 쿼리 생성과 화면용 데이터 구조화를 동시에 처리</li>
-      </ul>
-  
-      <div class="block-title">성과</div>
-      <ul class="detail-list">
-        <li>분산된 DB 구조에서도 연도별 / 사유별 통합 통계를 제공 가능</li>
-        <li>고객사 이슈와 클레임 현황을 빠르게 파악할 수 있는 데이터 기반 확보</li>
-        <li>운영·분석용 내부 페이지의 활용도 향상</li>
-      </ul>
-  
-      <div class="tag-wrap">
-        <span class="tag">MySQL</span>
-        <span class="tag">UNION ALL</span>
-        <span class="tag">Data Aggregation</span>
-        <span class="tag">PHP</span>
-        <span class="tag">Query Design</span>
-      </div>
+    <section id="projects" class="section">
+      <h2>Representative Projects</h2>
+      <p class="section-intro">
+        약 175개 쇼핑몰 API 연동 로직 개발 및 유지보수를 수행했고, 누적 작업 경험은 2200건 이상입니다.
+        주문·상품·클레임·배송 연동뿐 아니라 내부 운영 관리자 시스템과 데이터 분석 페이지까지 직접 구현했습니다.
+      </p>
 
-      <div class="project-cta">
-        상세 페이지 보기 →
-      </div>
-    </div>
-</a>
-  
-<a class="project-link" href="shipping-detail.html">
-  <div class="project">
-    <h3>택배사 송장 자동발번·출력·이력관리 시스템</h3>
-    <div class="project-meta">택배 API 연동 / 비동기 처리 / 성능 개선 / 운영 안정화</div>
+      <a class="project-link" href="mall-detail.html">
+        <div class="project">
+          <h3>쇼핑몰 통합 운영·분석 시스템</h3>
+          <div class="project-meta">내부 관리자 페이지 / 통계 대시보드 / 고객사 운영 관리</div>
 
-    <div class="block-title">프로젝트 개요</div>
-    <div>
-      여러 택배사 API와 연동하여 송장 자동발번, 출력, 전송 결과 이력관리까지 처리하는 시스템을 개발하고 유지보수했습니다.
-      단순한 API 호출 수준이 아니라 대량 주문 처리 상황에서도 안정적으로 동작하도록 구조를 개선했습니다.
-    </div>
+          <div class="block-title">프로젝트 개요</div>
+          <div>
+            고객사 운영 상태를 빠르게 파악할 수 있도록 고객사 현황, 계약 만료 예정 업체,
+            테스트 만료 예정 업체, 연동 현황, 시간·요일별 가입 HeatMap 등을 한 화면에서 확인할 수 있는
+            내부 운영·분석 시스템을 개발했습니다.
+          </div>
 
-    <div class="block-title">문제 상황</div>
-    <ul class="detail-list">
-      <li>명절 시즌 대량 주문 처리 시 순차 처리 구조로 인해 무한 로딩 및 타임아웃 발생</li>
-      <li>택배사 API 호출 제한(Rate Limit)과 서버 리소스 병목이 동시에 발생</li>
-      <li>실패 건의 확인 및 재전송이 어려워 운영팀과 고객사 대응 부담이 큼</li>
-    </ul>
+          <div class="block-title">내가 맡은 역할</div>
+          <ul class="detail-list">
+            <li>기간별 / 조건별 검색, 정렬, 필터 기능이 포함된 관리자 화면 개발</li>
+            <li>신규 고객사 수, 전체 고객사 수, 전체 회원 수 등 운영 지표 조회 로직 구현</li>
+            <li>요일·시간대별 가입 패턴을 시각화하는 HeatMap 화면 개발</li>
+            <li>계약만료 예정 업체, 테스트 종료 예정 업체, 연동 저하 업체를 빠르게 식별할 수 있는 모니터링 페이지 구성</li>
+          </ul>
 
-    <div class="block-title">해결 방식</div>
-    <ul class="detail-list">
-      <li>쉘 스크립트 기반 비동기 처리 구조 적용</li>
-      <li>Retry Logic과 실패 건 재처리 배치 도입</li>
-      <li>송장 결과 출력 및 이력관리 로그 저장 기능 개발</li>
-      <li>사용자가 실패 사유를 확인하고 재전송할 수 있는 운영 기능 추가</li>
-    </ul>
+          <div class="block-title">기술 포인트</div>
+          <ul class="detail-list">
+            <li>운영팀이 수작업 없이 상태를 파악할 수 있도록 내부 관리 기능을 데이터 기반으로 시각화</li>
+            <li>표, 차트, HeatMap을 함께 사용해 운영 현황을 직관적으로 확인할 수 있게 구성</li>
+            <li>계약 상태, 상품 등록, 주문 수집 등의 지표를 결합해 이상 징후를 빠르게 찾을 수 있도록 설계</li>
+          </ul>
 
-    <div class="block-title">성과</div>
-    <ul class="detail-list">
-      <li>1000건 이상 동시 처리 상황에서 처리시간 30분 → 3분 수준으로 단축</li>
-      <li>발번 성공률 70% → 95% 이상 개선</li>
-      <li>고객사 클레임 감소 및 시스템 신뢰도 회복에 기여</li>
-    </ul>
+          <div class="block-title">성과</div>
+          <ul class="detail-list">
+            <li>엑셀이나 수기 확인 없이 고객사 운영 현황을 즉시 파악 가능한 내부 도구 구축</li>
+            <li>계약 종료 예정 / 연동 저하 업체를 빠르게 확인해 운영 대응 속도 향상</li>
+            <li>운영 데이터 기반 의사결정에 필요한 모니터링 체계 마련</li>
+          </ul>
 
-    <div class="tag-wrap">
-      <span class="tag">REST API</span>
-      <span class="tag">Async Processing</span>
-      <span class="tag">Retry Logic</span>
-      <span class="tag">Shell Script</span>
-      <span class="tag">Logging</span>
-    </div>
+          <div class="tag-wrap">
+            <span class="tag">PHP</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Admin Dashboard</span>
+            <span class="tag">Operations</span>
+            <span class="tag">Data Visualization</span>
+          </div>
 
-    <div class="project-cta">
-      상세 페이지 보기 →
-    </div>
-  </div>
-</a>
-  </section>
-    
+          <div class="project-cta">
+            상세 페이지 보기 →
+          </div>
+        </div>
+      </a>
+
+      <a class="project-link" href="inventory-detail.html">
+        <div class="project">
+          <h3>상품별 재고연동/관리 메뉴 개발</h3>
+          <div class="project-meta">운영 효율 개선 / 재고 관리 자동화 / 관리자 기능 고도화</div>
+
+          <div class="block-title">프로젝트 개요</div>
+          <div>
+            대형 고객사의 프로모션 및 운영 정책에 따라 특정 기간 동안 상품별·쇼핑몰별 재고 연동을 중지하거나
+            수동 재고 입력 요청이 빈번하게 발생했습니다.
+            기존에는 내부 개발자가 직접 DB 수정 및 소스 예외처리를 통해 대응했으나,
+            이를 고객사와 운영팀이 직접 관리할 수 있도록 재고연동/관리 메뉴를 구축했습니다.
+          </div>
+
+          <div class="block-title">문제 상황</div>
+          <ul class="detail-list">
+            <li>재고 연동 중지 및 수동 재고 입력 요청을 개발자가 직접 처리</li>
+            <li>DB 수정 및 코드 예외처리 방식으로 운영 리스크 존재</li>
+            <li>반복적인 요청 대응으로 불필요한 공수 및 리소스 낭비 발생</li>
+          </ul>
+
+          <div class="block-title">해결 방식</div>
+          <ul class="detail-list">
+            <li>상품별 재고, 재고관리 여부, 변경이력을 확인할 수 있는 관리자 메뉴 개발</li>
+            <li>수정 기능을 통해 재고 수동 입력 및 재고 연동 여부(ON/OFF) 제어 가능</li>
+            <li>변경 이력을 history DB에 저장하고 화면에 노출</li>
+            <li>최근 24시간 이내 변경 이력이 존재할 경우 점멸 UI로 표시</li>
+            <li>초기 진입 시 재고 연동 중단 상품 우선 노출하여 빠른 대응 지원</li>
+            <li>상품코드 검색 시 연동 중 상품 포함 전체 조회 및 수정 가능</li>
+            <li>상품코드 / 고객사 코드 클릭 시 관련 상세 페이지로 이동 기능 제공</li>
+          </ul>
+
+          <div class="block-title">기술 포인트</div>
+          <ul class="detail-list">
+            <li>product DB의 Y/N 컬럼을 기준으로 API 배치 실행 여부를 제어하는 구조 설계</li>
+            <li>운영자가 직접 제어 가능한 Self-Service 관리 시스템 구축</li>
+            <li>데이터 변경 이력 관리 및 UI 시각화를 통한 운영 가시성 강화</li>
+            <li>기존 수동 처리 프로세스를 시스템화하여 안정성과 일관성 확보</li>
+          </ul>
+
+          <div class="block-title">성과</div>
+          <ul class="detail-list">
+            <li>반복적인 재고 수정 요청 대응 공수 대폭 감소</li>
+            <li>개발자 개입 없이 고객사 및 운영팀이 직접 관리 가능</li>
+            <li>수동 DB 수정 및 코드 예외처리 제거로 운영 안정성 향상</li>
+            <li>재고 관리 프로세스 표준화 및 작업 속도 개선</li>
+          </ul>
+
+          <div class="tag-wrap">
+            <span class="tag">PHP</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Admin System</span>
+            <span class="tag">Inventory Management</span>
+            <span class="tag">Operations Efficiency</span>
+          </div>
+
+          <div class="project-cta">
+            상세 페이지 보기 →
+          </div>
+        </div>
+      </a>
+
+      <a class="project-link" href="shipping-detail.html">
+        <div class="project">
+          <h3>택배사 송장 자동발번·출력·이력관리 시스템</h3>
+          <div class="project-meta">택배 API 연동 / 비동기 처리 / 성능 개선 / 운영 안정화</div>
+
+          <div class="block-title">프로젝트 개요</div>
+          <div>
+            여러 택배사 API와 연동하여 송장 자동발번, 출력, 전송 결과 이력관리까지 처리하는 시스템을 개발하고 유지보수했습니다.
+            단순한 API 호출 수준이 아니라 대량 주문 처리 상황에서도 안정적으로 동작하도록 구조를 개선했습니다.
+          </div>
+
+          <div class="block-title">문제 상황</div>
+          <ul class="detail-list">
+            <li>명절 시즌 대량 주문 처리 시 순차 처리 구조로 인해 무한 로딩 및 타임아웃 발생</li>
+            <li>택배사 API 호출 제한(Rate Limit)과 서버 리소스 병목이 동시에 발생</li>
+            <li>실패 건의 확인 및 재전송이 어려워 운영팀과 고객사 대응 부담이 큼</li>
+          </ul>
+
+          <div class="block-title">해결 방식</div>
+          <ul class="detail-list">
+            <li>쉘 스크립트 기반 비동기 처리 구조 적용</li>
+            <li>Retry Logic과 실패 건 재처리 배치 도입</li>
+            <li>송장 결과 출력 및 이력관리 로그 저장 기능 개발</li>
+            <li>사용자가 실패 사유를 확인하고 재전송할 수 있는 운영 기능 추가</li>
+          </ul>
+
+          <div class="block-title">성과</div>
+          <ul class="detail-list">
+            <li>1000건 이상 동시 처리 상황에서 처리시간 30분 → 3분 수준으로 단축</li>
+            <li>발번 성공률 70% → 95% 이상 개선</li>
+            <li>고객사 클레임 감소 및 시스템 신뢰도 회복에 기여</li>
+          </ul>
+
+          <div class="tag-wrap">
+            <span class="tag">REST API</span>
+            <span class="tag">Async Processing</span>
+            <span class="tag">Retry Logic</span>
+            <span class="tag">Shell Script</span>
+            <span class="tag">Logging</span>
+          </div>
+
+          <div class="project-cta">
+            상세 페이지 보기 →
+          </div>
+        </div>
+      </a>
+    </section>
+
 
     <section id="experience" class="section">
       <h2>Career Highlights</h2>
@@ -253,8 +268,8 @@
         <p><strong>Position</strong>: Backend Developer</p>
         <p><strong>Experience</strong>: 4년 (2022.03 ~ 현재)</p>
         <p><strong>Email</strong>: thoh1993@naver.com</p>
-        <p><strong>GitHub</strong>: <a href="https://github.com/terryoh123" target="_blank">https://github.com/terryoh123</a></p>
-        <p><strong>Portfolio</strong>: <a href="https://backend-portfolio-six-dusky.vercel.app/" target="_blank">https://backend-portfolio-six-dusky.vercel.app/</a></p>
+        <p><strong>Portfolio</strong>: <a href="https://backend-portfolio-six-dusky.vercel.app/"
+            target="_blank">https://backend-portfolio-six-dusky.vercel.app/</a></p>
       </div>
     </section>
 
@@ -262,6 +277,7 @@
       © 2026 OH TAE HOON Portfolio
     </div>
   </div>
-<script src="/js/common.js"></script>
+  <script src="/js/common.js"></script>
 </body>
+
 </html>
