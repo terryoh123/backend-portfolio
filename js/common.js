@@ -61,7 +61,30 @@ document.addEventListener("DOMContentLoaded", function () {
     overlay.addEventListener("click", closeAllDrawers);
   }
 
-  /* ===== 3. 전역 단축키 (ESC 키로 모달 및 드로어 닫기) ===== */
+  /* ===== 3. 일감 이력 접기 토글 기능 🔥 ===== */
+  const toggleProofBtn = document.getElementById("toggleProofBtn");
+  const proofGallery = document.getElementById("proofGallery");
+
+  if (toggleProofBtn && proofGallery) {
+    const btnText = toggleProofBtn.querySelector("span");
+    const btnSvg = toggleProofBtn.querySelector("svg");
+
+    toggleProofBtn.addEventListener("click", () => {
+      const isOpen = proofGallery.classList.contains("active");
+
+      if (isOpen) {
+        proofGallery.classList.remove("active");
+        btnText.textContent = "실제 작업 증명(일감 이력) 보기";
+        btnSvg.style.transform = "rotate(0deg)";
+      } else {
+        proofGallery.classList.add("active");
+        btnText.textContent = "작업 증명 접기";
+        btnSvg.style.transform = "rotate(180deg)";
+      }
+    });
+  }
+
+  /* ===== 4. 전역 단축키 (ESC 키로 모달 및 드로어 닫기) ===== */
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       if (modal && modal.classList.contains("active")) {

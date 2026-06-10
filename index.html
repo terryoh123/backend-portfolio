@@ -170,9 +170,15 @@
     <section id="proof" class="section">
       <h2>Work Proofs (일감 이력)</h2>
       <p class="section-intro">
-        실제 운영 중인 쇼핑몰 통합관리 시스템에서 배포 및 데이터 동기화, 예약, 택배 자동 연동 작업 등을 수행하고 업로드했던 실제 작업 이력들입니다. 이미지 클릭 시 상세 내용을 확대하여 확인하실 수 있습니다.
+        실제 운영 중인 쇼핑몰 통합관리 시스템에서 배포 및 데이터 동기화, 예약, 택배 자동 연동 작업 등을 수행하고 업로드했던 실제 작업 이력들입니다.
       </p>
-      <div class="gallery">
+      <div class="btn-toggle-wrap">
+        <button id="toggleProofBtn" class="btn-toggle">
+          <span>실제 작업 증명(일감 이력) 보기</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition: transform 0.2s;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+      </div>
+      <div id="proofGallery" class="proof-gallery">
         <div class="shot">
           <img src="images/proof/고객사통계업로드이력.png" alt="고객사 통계 업로드 이력" />
           <div class="caption">고객사 통계 업로드 이력: 통계 집계 작업 완료 후 업로드된 검증 증적</div>
