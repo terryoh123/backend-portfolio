@@ -411,3 +411,125 @@ a:hover {
   border-color: rgba(125, 211, 252, 0.45);
   transform: translateX(4px);
 }
+
+/* ===== 2x2 프로젝트 그리드 리팩토링 ===== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+/* 프로젝트 카드를 좀 더 컴팩트하고 고급스럽게 */
+.project {
+  margin-top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-body {
+  flex-grow: 1;
+}
+
+/* ===== 슬라이드 아웃 Drawer UI ===== */
+.drawer-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(4, 8, 16, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 90;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.drawer-overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  min-width: 500px;
+  max-width: 800px;
+  height: 100%;
+  background: #0f172a;
+  border-left: 1px solid #1e293b;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer.active {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #1e293b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e293b;
+}
+
+.drawer-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #f8fafc;
+  margin: 0;
+}
+
+.drawer-close {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.drawer-close:hover {
+  color: #f8fafc;
+}
+
+.drawer-content {
+  padding: 24px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+/* Drawer가 열렸을 때 body 스크롤 방지 */
+body.drawer-open {
+  overflow: hidden;
+}
+
+/* 반응형 모바일 대응 */
+@media (max-width: 980px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+  .drawer {
+    width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .drawer {
+    width: 100%;
+    min-width: 100%;
+  }
+}
