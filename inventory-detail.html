@@ -21,7 +21,7 @@
         <a href="#problem">Problem</a>
         <a href="#solution">Solution</a>
         <a href="#points">Technical Points</a>
-        <a href="#code">Code</a>
+        <a href="#screens">Screens</a>
       </div>
     </div>
   </div>
@@ -107,19 +107,35 @@
       </div>
     </section>
 
-    <section id="code" class="section">
+    <section id="screens" class="section">
       <p class="section-intro">
-        재고 관리 여부에 따라 API 배치 실행을 제어하는 로직과 변경 이력 저장 구조의 핵심 구현 코드입니다.
+        개발 완료된 상품별 재고 연동/관리 메뉴의 실제 운영 화면입니다. 수동 제어, 일괄 수정, 상세 이력 추적이 가능합니다.
       </p>
-      <h2>Implementation Code</h2>
+      <h2>Screens</h2>
       <div class="gallery">
         <div class="shot">
-          <img src="images/inventory-code-1.png" alt="재고 관리 로직 코드" />
-          <div class="caption">재고관리 여부(Y/N)에 따라 API 배치 실행을 분기하는 처리 로직</div>
+          <img src="images/inventory/재고연동관리최초화면.png" alt="재고 연동 관리 최초 화면" />
+          <div class="caption">재고 연동 관리 최초 화면: 연동 중단된 상품 리스트를 최우선으로 보여주어 운영 대응 속도를 극대화합니다.</div>
         </div>
         <div class="shot">
-          <img src="images/inventory-code-2.png" alt="이력 저장 코드" />
-          <div class="caption">재고 변경 시 history DB에 이력을 저장하는 로직</div>
+          <img src="images/inventory/재고연동관리고객사코드연동상품.png" alt="고객사 코드 연동 상품" />
+          <div class="caption">고객사 코드 기준 연동 상품 조회: 특정 고객사의 상품 코드와 재고 관리 설정 상태를 쉽게 검색 및 관리합니다.</div>
+        </div>
+        <div class="shot">
+          <img src="images/inventory/재고연동관리고객사코드몰연동상품.png" alt="고객사 코드 몰 연동 상품" />
+          <div class="caption">쇼핑몰 연동 상태 조회: 특정 고객사 내부에서 각 판매 쇼핑몰별 세부 재고 연동 상태를 정밀 분석합니다.</div>
+        </div>
+        <div class="shot">
+          <img src="images/inventory/재고연동관리수정모드.png" alt="재고 연동 관리 수정 모드" />
+          <div class="caption">재고 연동 설정 수정 모드: 재고 수동 입력 설정 및 재고 연동 ON/OFF 여부를 즉시 갱신할 수 있는 팝업 모달</div>
+        </div>
+        <div class="shot">
+          <img src="images/inventory/재고연동관리엑셀일괄수정.png" alt="재고 연동 관리 엑셀 일괄 수정" />
+          <div class="caption">재고 엑셀 일괄 수정 화면: 다량의 상품 재고 연동 설정을 엑셀 업로드를 활용해 한 번에 수정할 수 있어 대량 관리가 가능합니다.</div>
+        </div>
+        <div class="shot">
+          <img src="images/inventory/재고연동관리이력관리.png" alt="재고 연동 관리 이력 관리" />
+          <div class="caption">재고 연동 변경 이력 화면: 재고 변경 주체, 시간, 설정 데이터 이력을 조회하며 최근 24시간 이내 변경 시 점멸 UI가 노출됩니다.</div>
         </div>
       </div>
     </section>

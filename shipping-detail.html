@@ -142,38 +142,37 @@
 
     <section id="screens" class="section">
       <p class="section-intro">
-      실제 운영 화면과 코드 일부를 통해, 단순 API 호출이 아니라 설정 관리, 발번 처리, 결과 저장, 이력 조회까지 포함한 전체 흐름을 확인할 수 있습니다.
-    </p>
-      <h2>Screens & Code</h2>
+        택배사 송장 연동 및 관리 시스템의 실제 운영 화면입니다. 계약 정보 등록부터 송장 출력, 전송 이력 및 재시도 제어까지의 주요 흐름을 담고 있습니다.
+      </p>
+      <h2>Screens</h2>
       <div class="gallery">
         <div class="shot">
-          <img src="images/shipping-api-key-setting.png" alt="택배 API 인증키 세팅 화면" />
-          <div class="caption">택배사 계약코드 및 API 인증키 설정 화면: 택배사별 필수 연동 정보를 관리</div>
+          <img src="images/shipping/택배사계약코드관리.png" alt="택배사 계약 코드 관리" />
+          <div class="caption">택배사 계약 코드 관리: 여러 고객사와 택배사 간의 연동 계약 정보 목록을 통합 조회합니다.</div>
         </div>
-
         <div class="shot">
-          <img src="images/shipping-option-setting.png" alt="송장 옵션 세팅 화면" />
-          <div class="caption">송장 옵션 세팅 화면: 발번 방식, 운송장 출력 옵션 등을 운영 상황에 맞게 설정 가능</div>
+          <img src="images/shipping/택배사계약코드등록.png" alt="택배사 계약 코드 등록" />
+          <div class="caption">택배사 계약 코드 등록: 신규 계약에 필요한 API 계약 아이디, 패스워드 및 인증키 설정을 진행합니다.</div>
         </div>
-
         <div class="shot">
-          <img src="images/shipping-history-screen.png" alt="출력 및 이력관리 화면" />
-          <div class="caption">출력 및 이력관리 화면: 발번 결과와 전송 이력을 확인하고 실패 건을 추적</div>
+          <img src="images/shipping/출하반품지관리.png" alt="출하 반품지 관리" />
+          <div class="caption">출하/반품지 관리: 운송장 발번 시 택배사 API에 필수 전달되는 발송지 및 반품 배송지 주소를 설정합니다.</div>
         </div>
-
         <div class="shot">
-          <img src="images/shipping-async-code.png" alt="비동기 처리 코드" />
-          <div class="caption">비동기 처리 코드: 대량 발번 시 병목을 줄이기 위한 비동기 전송 및 요청 분산 구조</div>
+          <img src="images/shipping/배송지세팅.png" alt="배송지 세팅" />
+          <div class="caption">배송지 세팅: 주문 시스템과 연계되는 고객사별 기본 배송 정보 매핑 및 출하지 조건을 상세 지정합니다.</div>
         </div>
-
         <div class="shot">
-          <img src="images/shipping-api-log.png" alt="API 실행 및 로그 저장 코드" />
-          <div class="caption">API 실행 및 로그 저장 코드: 택배사 연동 결과를 저장하고 이력관리 화면과 연결</div>
+          <img src="images/shipping/템플릿생성.png" alt="템플릿 생성" />
+          <div class="caption">템플릿 생성: 택배사마다 상이한 레이블 규격과 바코드 출력용 송장 템플릿 양식을 생성합니다.</div>
         </div>
-
         <div class="shot">
-          <img src="images/shipping-history-controller.png" alt="이력관리 컨트롤러 코드" />
-          <div class="caption">이력관리 컨트롤러: 결과 조회, 검색, 재전송 연계 등 운영 기능을 담당</div>
+          <img src="images/shipping/출력버튼.png" alt="출력 버튼" />
+          <div class="caption">출력 및 전송 실행: 주문 처리 상태에서 대상 건을 선택하여 운송장 발번을 자동 실행하고 라벨 출력을 수행합니다.</div>
+        </div>
+        <div class="shot">
+          <img src="images/shipping/전송이력관리.PNG" alt="전송 이력 관리" />
+          <div class="caption">전송 이력 관리: API 송수신 로그, 성공/실패 여부와 상세 에러 원인을 파악하고 재시도할 수 있는 관리 대시보드</div>
         </div>
       </div>
     </section>

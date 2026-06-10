@@ -20,6 +20,7 @@
         <a href="#strengths">Strengths</a>
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
+        <a href="#proof">Proof</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -240,6 +241,51 @@
           </div>
         </div>
       </a>
+
+      <a class="project-link" href="reservation-detail.html">
+        <div class="project">
+          <h3>상품등록수정 예약기능 개발</h3>
+          <div class="project-meta">예약 작업 배치 처리 / API 연동 자동화 / 대량 상품 예약 관리</div>
+
+          <div class="block-title">프로젝트 개요</div>
+          <div>
+            이커머스 운영 시 특정 요일이나 대규모 프로모션 기간 동안 수동으로 처리하던 상품 정보(등록, 수정) 전송 작업을 사용자가 설정한 미래 시점에 자동으로 실행하도록 스케줄링하여 다수 쇼핑몰 API에 일괄 반영해주는 예약 관리 시스템을 개발했습니다.
+          </div>
+
+          <div class="block-title">내가 맡은 역할</div>
+          <ul class="detail-list">
+            <li>예약 일시, 대상 쇼핑몰, 대상 상품군 및 전송 데이터를 구성할 수 있는 상품예약관리 시스템 구축</li>
+            <li>대기열 큐(Queue) 구조를 차용하여 주기적으로 예약 데이터를 탐색하고 안전하게 비동기 스케줄 배치 전송 로직 구현</li>
+            <li>예약 성공/실패 여부와 쇼핑몰 API 실패에 따른 상세한 에러 로그 로깅 및 시각화 구현</li>
+          </ul>
+
+          <div class="block-title">기술 포인트</div>
+          <ul class="detail-list">
+            <li>연동 쇼핑몰별 API 호출 제한(Rate Limit)을 준수하기 위한 예약 대기열 구조와 데이터 정합성 설계</li>
+            <li>중복 전송 방지를 위한 트랜잭션 관리와 작업 재시도(Retry) 논리적 설계</li>
+            <li>직관적인 상태값 분류(대기, 진행, 완료, 실패)를 통해 작업 예측성 강화</li>
+          </ul>
+
+          <div class="block-title">성과</div>
+          <ul class="detail-list">
+            <li>수동 상품 갱신에 수반되던 야간/주말 수작업 공수 대폭 절감</li>
+            <li>연동 몰별 속도 제어를 통해 데이터 누락 및 통신 차단 장애 최소화</li>
+            <li>상세 이력 화면을 제공하여 문제 상황 발생 시 즉시 복구 및 자체 디버깅 구조 정착</li>
+          </ul>
+
+          <div class="tag-wrap">
+            <span class="tag">PHP</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Scheduler / Batch</span>
+            <span class="tag">REST API</span>
+            <span class="tag">Operations Efficiency</span>
+          </div>
+
+          <div class="project-cta">
+            상세 페이지 보기 →
+          </div>
+        </div>
+      </a>
     </section>
 
 
@@ -257,6 +303,47 @@
         <div class="timeline-item">
           <strong>대형 고객사 대응</strong><br />
           미샤, 랄프로렌, CJ제일제당, 어바웃펫, 에프앤코, LVMH, 아디다스 등 대형 고객사 커스터마이징 및 운영 이슈 대응
+        </div>
+      </div>
+    </section>
+
+    <section id="proof" class="section">
+      <h2>Work Proofs (일감 이력)</h2>
+      <p class="section-intro">
+        실제 운영 중인 쇼핑몰 통합관리 시스템에서 배포 및 데이터 동기화, 예약, 택배 자동 연동 작업 등을 수행하고 업로드했던 실제 작업 이력들입니다. 이미지 클릭 시 상세 내용을 확대하여 확인하실 수 있습니다.
+      </p>
+      <div class="gallery">
+        <div class="shot">
+          <img src="images/proof/고객사통계업로드이력.png" alt="고객사 통계 업로드 이력" />
+          <div class="caption">고객사 통계 업로드 이력: 통계 집계 작업 완료 후 업로드된 검증 증적</div>
+        </div>
+        <div class="shot">
+          <img src="images/proof/상품예약업로드이력.png" alt="상품 예약 업로드 이력" />
+          <div class="caption">상품 예약 업로드 이력: 상품 예약/수정 자동화 모듈 배포 및 실행 증적</div>
+        </div>
+        <div class="shot">
+          <img src="images/proof/재고연동업로드이력.png" alt="재고 연동 업로드 이력 1" />
+          <div class="caption">재고 연동 업로드 이력: 쇼핑몰별 재고 수정 및 자동 반영 데이터 증적 1</div>
+        </div>
+        <div class="shot">
+          <img src="images/proof/재고연동업로드이력2.png" alt="재고 연동 업로드 이력 2" />
+          <div class="caption">재고 연동 업로드 이력: 쇼핑몰별 재고 수정 및 자동 반영 데이터 증적 2</div>
+        </div>
+        <div class="shot">
+          <img src="images/proof/재고연동관리일감이력1.png" alt="재고 연동 관리 일감 이력" />
+          <div class="caption">재고 연동 관리 작업 증명: 재고 일괄 수정 및 점멸 알림에 대한 작업 처리 이력</div>
+        </div>
+        <div class="shot">
+          <img src="images/proof/택배자동화업로드이력1.png" alt="택배 자동화 업로드 이력 1" />
+          <div class="caption">택배 자동화 업로드 이력: 택배사 API 연동 모듈 배포 및 비동기 처리 실행 증적 1</div>
+        </div>
+        <div class="shot">
+          <img src="images/proof/택배자동화업로드이력2.png" alt="택배 자동화 업로드 이력 2" />
+          <div class="caption">택배 자동화 업로드 이력: 택배사 API 연동 모듈 배포 및 비동기 처리 실행 증적 2</div>
+        </div>
+        <div class="shot">
+          <img src="images/proof/택배자동화일감이력.png" alt="택배 자동화 일감 이력" />
+          <div class="caption">택배 자동화 작업 증명: 대량 송장 발번 및 재처리 연동에 대한 이력 로그 증적</div>
         </div>
       </div>
     </section>
